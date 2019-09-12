@@ -1,0 +1,22 @@
+<map id="MmwDemo_message_t" name="MmwDemo_message_t">
+<area shape="rect" id="node2" href="$union_mmw_demo__message__body__u.html" title="Message body used in Millimeter Wave Demo for passing configuration from MSS to DSS. " alt="" coords="785,448,984,475"/>
+<area shape="rect" id="node3" href="$struct_mmw_demo___clutter_removal_cfg__t.html" title="Clutter removal configuration. " alt="" coords="357,21,576,48"/>
+<area shape="rect" id="node4" href="$struct_mmw_demo__dss_assert_info_msg__t.html" title="Message for reporting DSS assertion information. " alt="" coords="360,72,573,99"/>
+<area shape="rect" id="node5" href="$struct_mmw_demo___calib_dc_range_sig_cfg__t.html" title="Millimeter Wave Demo DC range signature compensation. " alt="" coords="351,123,583,149"/>
+<area shape="rect" id="node6" href="$struct_mmw_demo___multi_obj_beam_forming_cfg__t.html" title="Millimeter Wave Demo multi object beam formaing Configuration. " alt="" coords="354,174,579,215"/>
+<area shape="rect" id="node7" href="$struct_mmw_demo___peak_grouping_cfg__t.html" title="Millimeter Wave Demo Peak grouping Configuration. " alt="" coords="361,240,572,267"/>
+<area shape="rect" id="node8" href="$struct_mmw_demo___cfar_cfg__t.html" title="Millimeter Wave Demo CFAR Configuration. " alt="" coords="390,291,543,317"/>
+<area shape="rect" id="node9" href="$struct_mmw_demo__comp_rx_channel_bias_cfg__t__.html" title="Range Bias and rx channel gain/phase compensation configuration. " alt="" coords="357,342,576,383"/>
+<area shape="rect" id="node10" href="$structcmplx16_im_re__t__.html" title="Complex data type, natural for C674x complex multiplication instructions. " alt="" coords="41,349,162,376"/>
+<area shape="rect" id="node11" href="$struct_mmw_demo___near_field_correction_cfg__t.html" title="Millimeter Wave Demo near field correction. " alt="" coords="361,407,573,449"/>
+<area shape="rect" id="node12" href="$struct_mmw_demo___extended_max_velocity_cfg__t.html" title="Millimeter Wave Demo Velocity Disambiguation. " alt="" coords="355,473,578,514"/>
+<area shape="rect" id="node13" href="$struct_mmw_demo___gui_mon_sel__t.html" title="Millimeter Wave Demo Gui Monitor Selection. " alt="" coords="381,539,552,565"/>
+<area shape="rect" id="node14" href="$struct_mmw_demo__det_obj_msg__t.html" title="Message for reporting detection information from data path to MSS. " alt="" coords="381,589,552,616"/>
+<area shape="rect" id="node15" href="$struct_mmw_demo__output__message__header__t.html" title="Message header for reporting detection information from data path. " alt="" coords="5,553,197,594"/>
+<area shape="rect" id="node16" href="$struct_mmw_demo__msg_tlv__t.html" title="TLV part of the message from DSS to MSS on data path detection information. " alt="" coords="26,619,177,645"/>
+<area shape="rect" id="node17" href="$struct_mmw_demo___a_d_c_buf_cfg__t.html" title="ADCBUF configuration. " alt="" coords="378,640,555,667"/>
+<area shape="rect" id="node18" href="$struct_mmw_demo___bpm_cfg__t.html" title="BPM configuration. " alt="" coords="389,691,544,717"/>
+<area shape="rect" id="node19" href="$struct_mmw_demo___lvds_stream_cfg__t.html" title="LVDS streaming configuration. " alt="" coords="367,741,566,768"/>
+<area shape="rect" id="node20" href="$struct_mmw_demo__measure_rx_channel_bias_cfg__t__.html" title="Range Bias and rx channel gain/phase measurement configuration. " alt="" coords="361,793,572,834"/>
+<area shape="rect" id="node21" href="$struct_mmw_demo___ana_monitor_cfg__t.html" title="Millimeter Wave Demo analog monitor configuration. " alt="" coords="369,859,564,885"/>
+</map>

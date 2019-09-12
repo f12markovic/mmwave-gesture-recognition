@@ -1,0 +1,4 @@
+<map id="MmwDemo_CLISensorStop" name="MmwDemo_CLISensorStop">
+<area shape="rect" id="node2" href="$mss__main_8c.html#adb82ebcbc9db19ba46914f2582a6d652" title="MmwDemo_notifySensorStop" alt="" coords="263,5,459,32"/>
+<area shape="rect" id="node3" href="$mss__main_8c.html#ad3f1f7afe60f2fce923da964c72a41b8" title="MmwDemo_waitSensorStopComplete" alt="" coords="239,56,483,83"/>
+</map>

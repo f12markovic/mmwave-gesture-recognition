@@ -1,0 +1,23 @@
+                                   OVERVIEW                                    
+Memory                              Used               Total        Percent Used
+--------------------------------------------------------------------------------
+PAGE 0:
+HSRAM                              32768               32768             100.00%
+L1DSRAM                            16384               16384             100.00%
+L1PSRAM                            15232               16384              92.97%
+L2SRAM_UMAP0                      118689              131072              90.55%
+L2SRAM_UMAP1                      131072              131072             100.00%
+L3SRAM                              2176              786432               0.28%
+PAGE 1:
+L3SRAM                            786432              786432             100.00%
+
+
+                            Type              HSRAM      L1DSRAM      L1PSRAM L2SRAM_UMAP0 L2SRAM_UMAP1       L3SRAM
+--------------------------------------------------------------------------------
+ALG                         code                  0            0         6944           64           96            0
+APP                         code                  0            0         8208        24143        53616         1648
+APP                         heap              32768        16384            0        72712            0       786432
+BIOS                        code                  0            0           16         7480        25600           48
+COMPONENTS_CORE             code                  0            0           48        10896        33952          480
+COMPONENTS_OPTIONAL         code                  0            0            0         1588        17792            0
+linker-generated            linker                0            0           16         1806           16            0
