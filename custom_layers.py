@@ -8,8 +8,10 @@
 
 import numpy as np
 
+import tensorflow as tf
+
 from keras import backend as K
-from keras.layers import Wrapper
+from keras.layers.wrappers import Wrapper
 from keras.engine import InputSpec
 from keras.engine.topology import Layer
 
@@ -75,11 +77,11 @@ class TemporalMaxPooling(Layer):
         #  if masked, set to large negative value so we ignore it when taking
         #  max of the sequence K.switch with tensorflow backend is less useful
         #  than Theano's
-        if K._BACKEND == 'tensorflow':
+        if K.backend() == 'tensorflow':
             mask = K.expand_dims(mask, axis=-1)
             mask = K.tile(mask, (1, 1, K.int_shape(x)[2]))
-            masked_data = K.tf.where(K.equal(mask, K.zeros_like(mask)),
-                K.ones_like(x)*-np.inf, x)  # if masked assume value is -inf
+            masked_data = tf.where(K.equal(mask, K.zeros_like(mask)),
+                    K.ones_like(x)*-np.inf, x)  # if masked assume value is -inf
             return K.max(masked_data, axis=1)
         else:  # theano backend
             mask = mask.dimshuffle(0, 1, "x")
