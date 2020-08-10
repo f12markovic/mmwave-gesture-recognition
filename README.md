@@ -1,7 +1,7 @@
 # Basic Gesture Recognition Using mmWave Sensor - TI AWR1642
 
 Collecting data from TI AWR1642 via serial port and passing it through
-pre-trained neural network for recognizing one of ten following gestures:
+neural network for recognizing one of nine following gestures:
 
 - Swipe Up
 - Swipe Down
@@ -12,7 +12,6 @@ pre-trained neural network for recognizing one of ten following gestures:
 - Letter Z
 - Letter X
 - Letter S
-- Spiral Out
 
 [![Watch the video](https://img.youtube.com/vi/bKT5YLit-_g/maxresdefault.jpg)](https://youtu.be/bKT5YLit-_g)
 
@@ -103,7 +102,6 @@ python3 collect_data.py ccw
 python3 collect_data.py z
 python3 collect_data.py s
 python3 collect_data.py x
-python3 collect_data.py spiral
 ```
 
 ### Training
@@ -135,8 +133,8 @@ python3 nn.py eval
 
 ### Testing
 
-[_test.py_](./test.py) will create a connection with AWR1642 and it will propagate any
-incoming data through NN with loaded, previously trained, weights.
+[_test.py_](./test.py) will create a connection with AWR1642 and propagate any
+incoming data through NN, while printing out the predictions.
 
 ```
 python3 test.py
@@ -154,4 +152,3 @@ details
 ## Acknowledgments
 
 * Thanks to [NOVELIC](https://www.novelic.com/) for providing me with sensors
-* Hat tip to [andry9454](https://github.com/andry9454) for [DropConnect](https://github.com/andry9454/KerasDropconnect) wrapper layer  and to [nigeljyng](https://gist.github.com/nigeljyng) for [TemporalMaxPooling](https://gist.github.com/nigeljyng/881ae30e7c35ca2b77f6975e50736493) layer implementation in keras

@@ -83,8 +83,6 @@ def parse_args():
         CURRENT_GESTURE = GESTURE.LETTER_X
     elif args.gesture == 's':
         CURRENT_GESTURE = GESTURE.LETTER_S
-    elif args.gesture == 'spiral':
-        CURRENT_GESTURE = GESTURE.SPIRAL_OUT
     else:
         print('Unknown gesture.')
         exit()

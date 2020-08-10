@@ -31,7 +31,6 @@ class GESTURE(Constant):
     LETTER_Z = 6
     LETTER_S = 7
     LETTER_X = 8
-    SPIRAL_OUT = 9
 
     @staticmethod
     def to_str(GESTURE_TAG):
@@ -53,8 +52,6 @@ class GESTURE(Constant):
             return 'Letter S'
         elif GESTURE_TAG == GESTURE.LETTER_X:
             return 'Letter X'
-        elif GESTURE_TAG == GESTURE.SPIRAL_OUT:
-            return 'Spiral Out, keep going'
         else:
             return None
 
@@ -78,8 +75,6 @@ class GESTURE(Constant):
             return './data/letter_z/'
         elif GESTURE_TAG == GESTURE.LETTER_X:
             return './data/letter_x/'
-        elif GESTURE_TAG == GESTURE.SPIRAL_OUT:
-            return './data/spiral_out/'
         else:
             return None
 

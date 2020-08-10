@@ -2,10 +2,11 @@
 
 import os
 import sys
+import pickle
 
 from threading import Thread, Lock
 
-import pickle
+from tqdm import tqdm
 import pandas as pd
 
 from constants import GESTURE
@@ -68,17 +69,10 @@ def get_data(gesture):
     if save_dir[-1] != '/':
         save_dir = save_dir + '/'
 
-    print_cnt = 0
-    for f in os.listdir(save_dir):
+    for f in tqdm(os.listdir(save_dir), desc='Files', leave=False):
         df = pd.read_csv(save_dir + f)
         num_of_frames = df.iloc[-1]['frame'] + 1
         sample = [[] for i in range(num_of_frames)]
-        if print_cnt == 100:
-            print('.', end='')
-            sys.stdout.flush()
-            print_cnt = 0
-        else:
-            print_cnt += 1
 
         for idx, row in df.iterrows():
             if row['x'] == 'None':
@@ -103,7 +97,7 @@ def save_dataset_in_pickle(X_pickle_file, Y_pickle_file, max=100000):
     gestures = GESTURE.get_all_gestures()
 
     print('\nRefreshing db', end='')
-    for gesture in gestures:
+    for gesture in tqdm(gestures, desc='Gestures'):
         cnt = 0
         for sample in get_data(gesture):
             X.append(sample)

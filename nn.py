@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 
+import os
 import time
 import argparse
 
@@ -9,22 +10,23 @@ from utility_functions import save_dataset_in_pickle
 import numpy as np
 import matplotlib.pyplot as plt
 
-from sklearn import model_selection
-
-from keras import Model
-from keras.utils import to_categorical
-from keras.preprocessing.sequence import pad_sequences
-from keras.layers import Input, Masking, LSTM, Dense, BatchNormalization, PReLU
-from keras.callbacks import Callback
-
-from custom_layers import TemporalMaxPooling, DropConnect
-
-from constants import GESTURE, X_PICKLE_FILE, Y_PICKLE_FILE, MODEL_WEIGHTS_FILE
-
+from sklearn.model_selection import train_test_split
 
 # Disable tensorflow logs
 import logging
 logging.getLogger('tensorflow').disabled = True
+
+
+from tensorflow.keras import Model
+from tensorflow.keras.utils import to_categorical
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.layers import Input, Dense, Dropout, PReLU, GlobalAveragePooling1D
+from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping
+from tensorflow.keras.models import load_model
+
+from transformer import TransformerBlock
+
+from constants import GESTURE, X_PICKLE_FILE, Y_PICKLE_FILE, MODEL_WEIGHTS_FILE
 
 
 class NN():
@@ -65,8 +67,9 @@ class NN():
         self.__K = len(set(self.__Y))
         print('Number of classes: ' + str(self.__K))
 
-        sample_with_max_num_of_frames = max(self.__X, key=lambda sample: len(sample))
-        self.__max_num_of_frames = len(sample_with_max_num_of_frames)
+        #  sample_with_max_num_of_frames = max(self.__X, key=lambda sample: len(sample))
+        #  self.__max_num_of_frames = len(sample_with_max_num_of_frames)
+        self.__max_num_of_frames = 50
         print('Maximum number of frames: ' + str(self.__max_num_of_frames))
 
         sample_with_max_num_of_objs = max(
@@ -84,6 +87,8 @@ class NN():
         # Pad objects
         zero_obj = [0.]*self.__num_of_data_in_obj
         for sample in X:
+            if len(sample) > 50:
+                sample = sample[:50]
             padded_sample = pad_sequences(sample, maxlen=self.__max_num_of_objs,
                                           dtype='float32', padding='post',
                                           value=zero_obj)
@@ -112,22 +117,20 @@ class NN():
     def __create_model(self):
         frame_size = self.__max_num_of_objs*self.__num_of_data_in_obj
 
-        input = Input(shape=(self.__max_num_of_frames, frame_size,))
-        m = Masking(mask_value=0.).compute_mask(input)
+        inputs = Input(shape=(self.__max_num_of_frames, frame_size,))
 
-        x = input
-        x = LSTM(512, recurrent_dropout=0.5, dropout=0.5,
-                 return_sequences=True)(x, mask=m)
-        x = TemporalMaxPooling()(x)
+        x = TransformerBlock(frame_size=frame_size,
+                             num_heads=25, units=512, dropout=0.5)(inputs)
+        x = GlobalAveragePooling1D()(x)
+        x = Dropout(0.5)(x)
 
-        num_of_hidden_layers = 2
-        for i in range(num_of_hidden_layers):
-            x = DropConnect(Dense(256), dropout=0.5)(x)
-            x = BatchNormalization()(x)
-            x = PReLU()(x)
-        output = Dense(self.__K, activation='softmax')(x)
-        self.__model = Model(inputs=[input], outputs=[output])
+        x = Dense(128)(x)
+        x = PReLU()(x)
+        x = Dropout(0.5)(x)
 
+        outputs = Dense(self.__K, activation='softmax')(x)
+
+        self.__model = Model(inputs=inputs, outputs=outputs)
         self.__model.compile(loss='categorical_crossentropy',
                              optimizer='adam',
                              metrics=['accuracy'])
@@ -136,9 +139,9 @@ class NN():
     def look_into_data(self):
         i = 1
         # Plot each column
+        fig = plt.figure()
         while True:
             seed = np.random.randint(len(self.__X))
-            fig = plt.figure()
             for data_in_obj in range(self.__num_of_data_in_obj):
                 plt.subplot(self.__num_of_data_in_obj, 1, i)
                 plt.plot(self.__X[seed][:, data_in_obj])
@@ -154,48 +157,33 @@ class NN():
                     plt.title('doppler_idx ', y=0.5, loc='right')
                 else:
                     plt.title('Unknown ', y=0.5, loc='right')
-                fig.suptitle(GESTURE.to_str(self.__Y[seed]), fontsize=16)
+                fig.suptitle(GESTURE.to_str(np.argmax(self.__Y[seed])), fontsize=16)
                 i += 1
             i = 1
             plt.show()
 
     def train(self):
-        X_train, X_test, Y_train, Y_test = (
-            model_selection.train_test_split(self.__X, self.__Y, test_size=0.2)
-        )
+        X_train, X_val, y_train, y_val = train_test_split(self.__X, self.__Y,
+                                                          stratify=self.__Y,
+                                                          test_size=0.3)
 
-        loss_acc_data = []
-        model = self.__model
-        class ValidationTest(Callback):
-            def on_epoch_end(self, epoch, logs={}):
-                preds = model.evaluate(X_test, Y_test,
-                                       batch_size=32, verbose=1,
-                                       sample_weight=None)
-                loss_acc_data.append((preds[0], preds[1]))
-                # Back to previous line
-                print('\033[F\033[56C ', end='')
-                print('- loss: ' + str(round(preds[0], 4)), end=' ')
-                print('- acc: ' + str(round(preds[1], 4)))
-                if preds[1] >= max(loss_acc_data, key=lambda x: x[1])[1]:
-                    print()
-                    model.save_weights(MODEL_WEIGHTS_FILE)
-                    print('Model saved.')
-                    print()
-        callbacks = ValidationTest()
-
-        self.__model.fit(X_train, Y_train, epochs=1000, callbacks=[callbacks])
+        history = self.__model.fit(X_train, y_train, epochs=1000,
+                                   validation_data=(X_val, y_val),
+                                   callbacks=[EarlyStopping(patience=20),
+                                              ModelCheckpoint(MODEL_WEIGHTS_FILE,
+                                                              save_best_only=True)])
+        with open('.history', 'wb') as f:
+            pickle.dump(history, f)
 
     def load_model(self):
         print('Loading weights...', end='')
-        self.__model.load_weights(MODEL_WEIGHTS_FILE)
+        self.__model = load_model(MODEL_WEIGHTS_FILE)
         print('Done.')
 
     def evaluate(self):
-        preds = self.__model.evaluate(self.__X, self.__Y, batch_size=32,
-                                      verbose=1, sample_weight=None)
-        print('\033[F\033[57C ', end='')
-        print('- loss: ' + str(round(preds[0], 4)), end=' ')
-        print('- acc: ' + str(round(preds[1], 4)))
+        preds = self.__model.evaluate(self.__X, self.__Y)
+        print('Loss: ' + str(round(preds[0], 4)), end=' ')
+        print('Acc: ' + str(round(preds[1], 4)))
 
     def get_data(self):
         if self.__collecting_frame is False:
@@ -318,8 +306,6 @@ if __name__ == '__main__':
         nn = NN(None)
     else:
         nn = NN(None, refresh_data=True)
-
-    #  nn.look_into_data()
 
     if training:
         nn.train()
