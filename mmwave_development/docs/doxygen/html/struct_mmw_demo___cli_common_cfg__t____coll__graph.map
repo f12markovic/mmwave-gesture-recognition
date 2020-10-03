@@ -1,6 +1,0 @@
-<map id="MmwDemo_CliCommonCfg_t_" name="MmwDemo_CliCommonCfg_t_">
-<area shape="rect" id="node2" href="$struct_mmw_demo__comp_rx_channel_bias_cfg__t__.html" title="Range Bias and rx channel gain/phase compensation configuration. " alt="" coords="280,5,499,47"/>
-<area shape="rect" id="node3" href="$structcmplx16_im_re__t__.html" title="Complex data type, natural for C674x complex multiplication instructions. " alt="" coords="5,13,127,39"/>
-<area shape="rect" id="node4" href="$struct_mmw_demo__measure_rx_channel_bias_cfg__t__.html" title="Range Bias and rx channel gain/phase measurement configuration. " alt="" coords="284,71,495,112"/>
-<area shape="rect" id="node5" href="$struct_mmw_demo___ana_monitor_cfg__t.html" title="Millimeter Wave Demo analog monitor configuration. " alt="" coords="292,137,487,163"/>
-</map>

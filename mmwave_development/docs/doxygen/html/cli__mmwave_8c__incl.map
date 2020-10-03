@@ -1,6 +1,0 @@
-<map id="/home/gtbldadm/nightlybuilds/mmwave_sdk/ti/utils/cli/src/cli_mmwave.c" name="/home/gtbldadm/nightlybuilds/mmwave_sdk/ti/utils/cli/src/cli_mmwave.c">
-<area shape="rect" id="node7" href="$sys__common_8h.html" title="This is the common header file used by the various mmWave SDK modules. " alt="" coords="383,117,559,143"/>
-<area shape="rect" id="node9" href="$sys__common__xwr16xx_8h.html" title="This is the common header file used by the various mmWave SDK modules for XWR16XX device..." alt="" coords="460,199,626,240"/>
-<area shape="rect" id="node10" href="$sys__common__xwr16xx__mss_8h.html" title="This is the common header file used by the various mmWave SDK modules for XWR16xx Master subsystem..." alt="" coords="366,288,531,329"/>
-<area shape="rect" id="node11" href="$sys__common__xwr16xx__dss_8h.html" title="This is the common header file used by the various mmWave SDK modules for XWR16xx DSP subsystem..." alt="" coords="555,288,720,329"/>
-</map>

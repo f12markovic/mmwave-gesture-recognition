@@ -1,9 +1,0 @@
-<map id="MmwDemo_LVDSStreamSwConfig" name="MmwDemo_LVDSStreamSwConfig">
-<area shape="rect" id="node2" href="$group___h_s_i___h_e_a_d_e_r___p_r_o_t_o_c_o_l.html#ga10f96f3bbfd33cebc75d7690947a60ca" title="HSIHeader_getHeaderSize" alt="" coords="307,5,487,32"/>
-<area shape="rect" id="node3" href="$group___h_s_i___h_e_a_d_e_r___p_r_o_t_o_c_o_l.html#ga344e6273bfd0ef37f55ea3393382aa62" title="HSIHeader_toCBUFFUnits" alt="" coords="307,56,488,83"/>
-<area shape="rect" id="node4" href="$dss__lvds__stream_8c.html#aefc0fc1c3a35a894d10306a450bcc351" title="MmwDemo_LVDSStream\l_EDMAAllocateCBUFFSwChannel" alt="" coords="284,107,511,149"/>
-<area shape="rect" id="node7" href="$dss__lvds__stream_8c.html#a42feb325f9af45c9d7f88424eeb41c97" title="MmwDemo_LVDSStream\l_EDMAFreeCBUFFSwChannel" alt="" coords="294,173,501,214"/>
-<area shape="rect" id="node8" href="$dss__lvds__stream_8c.html#a83188604dcd3ff148e71d25694c24437" title="MmwDemo_LVDSStream\l_SwTriggerFrameDone" alt="" coords="311,238,484,279"/>
-<area shape="rect" id="node5" href="$dss__lvds__stream_8c.html#ae78c410ab1eda94e028f7fcb2eaa436e" title="MmwDemo_LVDSStream\l_EDMAAllocateCBUFFChannel" alt="" coords="559,78,767,119"/>
-<area shape="rect" id="node6" href="$dss__lvds__stream_8c.html#ae04e238930a80fd34b41c2a4035f3ae8" title="MmwDemo_LVDSStream\l_EDMAAllocateCBUFFHwChannel" alt="" coords="815,78,1043,119"/>
-</map>

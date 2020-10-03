@@ -1,7 +1,6 @@
 # Basic Gesture Recognition Using mmWave Sensor - TI AWR1642
 
-Collecting data from TI AWR1642 via serial port and passing it through
-neural network for recognizing one of nine following gestures:
+Collecting data from TI AWR1642 via serial port and passing it through transformer neural network for recognizing one of nine following gestures:
 
 - Swipe Up
 - Swipe Down
@@ -13,131 +12,122 @@ neural network for recognizing one of nine following gestures:
 - Letter X
 - Letter S
 
-[![Watch the video](https://img.youtube.com/vi/bKT5YLit-_g/maxresdefault.jpg)](https://youtu.be/bKT5YLit-_g)
+![Demo](./demo.gif)
 
-## Getting Started
+# Getting Started
 
-These instructions will get you the project up and running on your local machine
-for development and testing purposes.
+## Installation
 
-### Prerequisites
-
-#### On mmWave sensor side
-
-For just flashing a .bin file:
-
-- TI UniFlash - [cloud version](https://dev.ti.com/uniflash/) or [standalone version](http://www.ti.com/tool/UNIFLASH)
-
-For developing, compiling and debugging the code:
-
-- [CCS studio](http://www.ti.com/tool/CCSTUDIO) with mmWave support
-- [TI mmWaveSDK 02.00.00.04](http://software-dl.ti.com/ra-processors/esd/MMWAVE-SDK/02_00_00_04/index_FDS.html) with modules:
-    - SYS/BIOS 6.53.02.00
-    - TI CGT C6000 8.1.3
-    - TI CGT ARM 16.9.6
-    - DSPLIB C64Px 3.4.0.0
-    - DSPLIB C674x 3.4.0.0
-    - MATHLIB C674x 3.1.2.1
-    - XDCtools 3.50.04.43
-
-##### Installation
+Install [mmwave](./mmwave/) package locally:
 
 ```
-chmod a+x mmwave_sdk_02_00_00_04-Linux-x86-Install.bin
-./mmwave_sdk_02_00_00_04-Linux-x86-Install.bin
+git clone https://github.com/f12markovic/mmwave-gesture-recognition.git
+cd mmwave-gesture-recognition
+pip3 install -e ./
 ```
 
-#### On the other side of the line:
+## Serial permissions
 
-- python3 with:
-    - [pyserial](https://pypi.org/project/pyserial/)
-    - [aenum](https://pypi.org/project/aenum/)
-    - [numpy](https://pypi.org/project/numpy/)
-    - [matplotlib](https://pypi.org/project/matplotlib/)
-    - [pandas](https://pypi.org/project/pandas/)
-    - [scikit-learn](https://pypi.org/project/scikit-learn/)
-    - [tensorflow](https://pypi.org/project/tensorflow/)
-    - [keras](https://pypi.org/project/Keras/)
+The group name can differ from distribution to distribution.
 
-##### Installation
-
-For a single user
+### Arch
 
 ```
-pip3 install --user pyserial aenum numpy matplotlib pandas scikit-learn tensorflow keras
+gpasswd -a <username> uucp
 ```
 
-or for all users
+### Ubuntu:
 
 ```
-sudo pip3 install pyserial aenum numpy matplotlib pandas scikit-learn tensorflow keras
+gpasswd -a <username> dialout
 ```
+
+The change will take effect on the next login.
+
+The group name can be obtained by running:
+
+```
+stat /dev/ttyACM0 | grep Gid
+```
+
+### One time only (permissions will be reseted after unplugging):
+
+```
+chmod 666 /dev/ttyACM0
+chmod 666 /dev/ttyACM1
+```
+
+## Flashing
+
+The code used for AWR1642 is just a variation of mmWaveSDK demo provided with
+the version 02.00.00.04. Bin file is located in [firmware](./firmware/) directory.
+
+1. Close SOP0 and SOP2, and reset the power.
+2. Start the console and run flash command:
+```
+python3 console.py
+>> flash xwr16xx_mmw_demo.bin
+```
+3. Remove SOP0 and reset the power again.
+
 
 ## Running
 
-### Setting up AWR1642
+If the board was connected before starting the console, the script should automatically find the ports and connect to them. This is only applicable for boards with XDS. If the board is connected after starting the console, _autoconnect_ command should be run. If for some reason this is not working, manual connection is available via _connect_ command. Manual connection can also be used for boards without XDS. Type _help connect_ or _help autoconnect_ for more info.
 
-Code used for AWR1642 is just a variation of mmWaveSDK demo provided with
-version 02.00.00.04. Please follow TI's [guide](./mmwave_development/mmw_16xx_user_guide.pdf) on how to set up the AWR1642.
+If the board is connected, the prompt will be green, otherwise, it will be red.
 
-__Note__: instead of flashing xwr16xx_ccsdebug.bin (explained on page 19 of the
-[guide](./mmwave_development/mmw_16xx_user_guide.pdf)) and then running CCSTUDIO for loading the code, it is possible to just
-flash [xwr16xx_mmw_demo.bin](./mmwave_development/xwr16xx_mmw_demo.bin) file. This way CCSTUDIO is not needed and the
-code will start running as soon as the board has been powered up. This is more
-plug and play solution if you wish not to mess around with mmWave code.
+After connecting, simple _start_ command will start listener, parser, plotter and prediction.
+
+```
+python3 console.py
+>> start
+```
+
+Use _Ctrl-C_ to stop this command.
+
 
 ### Collecting data
 
-[_collect_data.py_](./collect_data.py) is used for saving of the data incoming from TI AWR1642.
-The passed argument will be used for labeling of the data. Files will be saved
-in [data](./data/) directory, distributed in proper gesture folders.
+The console can be used for easy data collection. Use _log_ command to save gesture samples in .csv files in [mmwave/data/](./mmwave/data/) directory. If nothing is captured for more than a half a second, the command will automatically stop. _redraw_/_remove_ commands will redraw/remove the last captured sample.
 
 ```
-python3 collect_data.py up
-python3 collect_data.py down
-python3 collect_data.py right
-python3 collect_data.py left
-python3 collect_data.py cw
-python3 collect_data.py ccw
-python3 collect_data.py z
-python3 collect_data.py s
-python3 collect_data.py x
+python3 console.py
+>> listen
+>> plot
+>> log up
+>> log up
+>> redraw up
+>> remove up
+>> log down
+>> log ccw
 ```
 
 ### Training
 
-[_nn.py_](./nn.py) is used for:
-
-- training of neural network with previously saved data samples.
-  (__Note__: These samples are already pre-processed and saved in pickle files.
-  In order to refresh the database, --refresh-db flag should be passed (this can
-  take some time)).
-  Weights with best accuracy on test set will be saved in [.model_weights](./.model_weights) file
-  and used later in [_test.py_](./test.py) script.
+Console can be used for the training process. [X](./mmwave/data/.X_data) and [y](./mmwave/data/.y_data) data is cached in pickle files located in [mmwave/data/](./mmwave/data/) directory. If new data is captured, _refresh_ argument should be passed (this option will take few minutes to execute).
 
 ```
-python3 nn.py train
+python3 console.py
+>> train
 ```
 
 or
 
 ```
-python3 nn.py train --refresh-db
+python3 console.py
+>> train refresh
 ```
 
-- evaluating the model with trained weights
+### Help
+
+Use help command to list all available commands and get documentation on them.
 
 ```
-python3 nn.py eval
-```
-
-### Testing
-
-[_test.py_](./test.py) will create a connection with AWR1642 and propagate any
-incoming data through NN, while printing out the predictions.
-
-```
-python3 test.py
+python3 console.py
+>> help
+>> help flash
+>> help listen
 ```
 
 ## Authors
@@ -146,8 +136,7 @@ python3 test.py
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for
-details
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details
 
 ## Acknowledgments
 

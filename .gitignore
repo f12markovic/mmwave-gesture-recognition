@@ -1,3 +1,4 @@
 .*project
 __pycache__/
+mmwave.egg-info/
 tags

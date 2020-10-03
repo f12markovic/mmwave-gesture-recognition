@@ -1,7 +1,0 @@
-<map id="utils/rx_ch_bias_measure.h" name="utils/rx_ch_bias_measure.h">
-<area shape="rect" id="node2" href="$sys__common_8h.html" title="This is the common header file used by the various mmWave SDK modules. " alt="" coords="45,169,221,196"/>
-<area shape="rect" id="node8" href="$mmw__config_8h.html" title="This is the header file that describes configurations for the Millimeter Wave Demo. " alt="" coords="170,80,306,121"/>
-<area shape="rect" id="node5" href="$sys__common__xwr16xx_8h.html" title="This is the common header file used by the various mmWave SDK modules for XWR16XX device..." alt="" coords="194,244,359,285"/>
-<area shape="rect" id="node6" href="$sys__common__xwr16xx__mss_8h.html" title="This is the common header file used by the various mmWave SDK modules for XWR16xx Master subsystem..." alt="" coords="99,333,265,375"/>
-<area shape="rect" id="node7" href="$sys__common__xwr16xx__dss_8h.html" title="This is the common header file used by the various mmWave SDK modules for XWR16xx DSP subsystem..." alt="" coords="289,333,454,375"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="xwr16xx/mmw/dss/dss_resources.h" name="xwr16xx/mmw/dss/dss_resources.h">
-<area shape="rect" id="node2" href="$sys__common_8h.html" title="This is the common header file used by the various mmWave SDK modules. " alt="" coords="45,95,221,121"/>
-<area shape="rect" id="node5" href="$sys__common__xwr16xx_8h.html" title="This is the common header file used by the various mmWave SDK modules for XWR16XX device..." alt="" coords="194,169,359,211"/>
-<area shape="rect" id="node6" href="$sys__common__xwr16xx__mss_8h.html" title="This is the common header file used by the various mmWave SDK modules for XWR16xx Master subsystem..." alt="" coords="99,259,265,300"/>
-<area shape="rect" id="node7" href="$sys__common__xwr16xx__dss_8h.html" title="This is the common header file used by the various mmWave SDK modules for XWR16xx DSP subsystem..." alt="" coords="289,259,454,300"/>
-</map>

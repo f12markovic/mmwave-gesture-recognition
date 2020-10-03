@@ -1,7 +1,0 @@
-<map id="MmwDemo_mboxReadTask" name="MmwDemo_mboxReadTask">
-<area shape="rect" id="node2" href="$utils_2cli_2src_2cli_8c.html#a115d0ce3ad0a40b0d11746e38947a110" title="CLI_write" alt="" coords="324,5,403,32"/>
-<area shape="rect" id="node3" href="$mss__main_8c.html#a6d9a0065e5b19401d4c6222ec27f42ac" title="MmwDemo_installDss2MssException\lSignallingISR" alt="" coords="241,57,485,98"/>
-<area shape="rect" id="node5" href="$mss__main_8c.html#a684bd96684ec092c19c88e496754ac57" title="MmwDemo_mboxCallback" alt="" coords="274,123,453,149"/>
-<area shape="rect" id="node6" href="$mss__main_8c.html#a2f601e6d062882e2d2f5e2f785c7d394" title="MmwDemo_mboxWrite" alt="" coords="284,173,443,200"/>
-<area shape="rect" id="node4" href="$mss__main_8c.html#a567b1232513bb259ff281b0b9399e48d" title="MmwDemo_Dss2MssISR" alt="" coords="533,64,708,91"/>
-</map>

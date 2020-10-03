@@ -1,9 +1,0 @@
-<map id="xwr16xx/mmw/dss/dss_lvds_stream.h" name="xwr16xx/mmw/dss/dss_lvds_stream.h">
-<area shape="rect" id="node4" href="$dss__data__path_8h.html" title="This is the data path processing header. " alt="" coords="459,95,614,136"/>
-<area shape="rect" id="node6" href="$sys__common_8h.html" title="This is the common header file used by the various mmWave SDK modules. " alt="" coords="186,273,362,300"/>
-<area shape="rect" id="node13" href="$mmw__config_8h.html" title="This is the header file that describes configurations for the Millimeter Wave Demo. " alt="" coords="469,184,605,225"/>
-<area shape="rect" id="node17" href="$detected__obj_8h.html" title="ti/demo/io_interface\l/detected_obj.h" alt="" coords="1010,184,1146,225"/>
-<area shape="rect" id="node9" href="$sys__common__xwr16xx_8h.html" title="This is the common header file used by the various mmWave SDK modules for XWR16XX device..." alt="" coords="335,348,501,389"/>
-<area shape="rect" id="node10" href="$sys__common__xwr16xx__mss_8h.html" title="This is the common header file used by the various mmWave SDK modules for XWR16xx Master subsystem..." alt="" coords="241,437,406,479"/>
-<area shape="rect" id="node11" href="$sys__common__xwr16xx__dss_8h.html" title="This is the common header file used by the various mmWave SDK modules for XWR16xx DSP subsystem..." alt="" coords="430,437,595,479"/>
-</map>

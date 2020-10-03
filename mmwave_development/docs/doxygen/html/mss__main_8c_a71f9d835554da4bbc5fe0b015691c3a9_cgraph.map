@@ -1,6 +1,0 @@
-<map id="MmwDemo_gpioSwitchTask" name="MmwDemo_gpioSwitchTask">
-<area shape="rect" id="node2" href="$mss__main_8c.html#ab2269ffc8c492b8fb30b034857349098" title="MmwDemo_notifySensorStart" alt="" coords="267,5,464,32"/>
-<area shape="rect" id="node3" href="$mss__main_8c.html#adb82ebcbc9db19ba46914f2582a6d652" title="MmwDemo_notifySensorStop" alt="" coords="267,56,463,83"/>
-<area shape="rect" id="node4" href="$mss__main_8c.html#a36a81d5ded90a13a012ecd177e41a9d6" title="MmwDemo_waitSensorStartComplete" alt="" coords="243,107,488,133"/>
-<area shape="rect" id="node5" href="$mss__main_8c.html#ad3f1f7afe60f2fce923da964c72a41b8" title="MmwDemo_waitSensorStopComplete" alt="" coords="243,157,487,184"/>
-</map>

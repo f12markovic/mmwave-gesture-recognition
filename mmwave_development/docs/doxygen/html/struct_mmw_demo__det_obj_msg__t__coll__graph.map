@@ -1,4 +1,0 @@
-<map id="MmwDemo_detObjMsg_t" name="MmwDemo_detObjMsg_t">
-<area shape="rect" id="node2" href="$struct_mmw_demo__output__message__header__t.html" title="Message header for reporting detection information from data path. " alt="" coords="5,5,197,47"/>
-<area shape="rect" id="node3" href="$struct_mmw_demo__msg_tlv__t.html" title="TLV part of the message from DSS to MSS on data path detection information. " alt="" coords="222,13,373,39"/>
-</map>

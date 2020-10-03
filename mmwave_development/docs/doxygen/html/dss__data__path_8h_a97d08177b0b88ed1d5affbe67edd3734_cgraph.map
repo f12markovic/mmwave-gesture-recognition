@@ -1,8 +1,0 @@
-<map id="MmwDemo_dataPathConfigEdma" name="MmwDemo_dataPathConfigEdma">
-<area shape="rect" id="node2" href="$dss__config__edma__util_8c.html#a150f2630da81f8aff78617b093f71a91" title="EDMAutil_configType1" alt="" coords="621,107,777,133"/>
-<area shape="rect" id="node4" href="$dss__config__edma__util_8c.html#a78e519796d3ee3f89db452c3f22ee6e6" title="EDMAutil_configType2b" alt="" coords="618,56,781,83"/>
-<area shape="rect" id="node5" href="$dss__config__edma__util_8c.html#a64366456ee6eb7aa4cd11cb71ace36c5" title="EDMAutil_configType3" alt="" coords="315,5,471,32"/>
-<area shape="rect" id="node6" href="$dss__data__path_8c.html#a9cd469e54ecf9a39f133b0828b75f59d" title="MmwDemo_dataPathConfigCQEdma" alt="" coords="273,157,513,184"/>
-<area shape="rect" id="node3" href="$dss__config__edma__util_8c.html#a53794c0681c33b0edc0048f899640661" title="EDMA_setup_shadow_link" alt="" coords="885,56,1064,83"/>
-<area shape="rect" id="node7" href="$dss__data__path_8c.html#ac0d11fffca101a708de3c6f3bea1de9b" title="MmwDemo_EDMA_CQTransferCompletion\lCallbackFxn" alt="" coords="561,158,837,199"/>
-</map>

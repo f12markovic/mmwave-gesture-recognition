@@ -1,6 +1,0 @@
-<map id="MmwDemo_processChirp" name="MmwDemo_processChirp">
-<area shape="rect" id="node2" href="$dss__data__path_8c.html#a015f75d00740cf3eec06431112bffff5" title="MmwDemo_dataPathWait1DOutputData" alt="" coords="227,5,485,32"/>
-<area shape="rect" id="node3" href="$dss__data__path_8c.html#a4a7682810ada95cffe3451cf8103e1c9" title="MmwDemo_interChirpProcessing" alt="" coords="247,56,465,83"/>
-<area shape="rect" id="node4" href="$dss__data__path_8c.html#af82a6e2bb7eace91b9d2f0552f6f35fa" title="MmwDemo_dataPathWait1DInputData" alt="" coords="533,27,783,53"/>
-<area shape="rect" id="node5" href="$dss__data__path_8c.html#a0bb996d44df56729f6feec855cc4c26a" title="MmwDemo_dcRangeSignature\lCompensation" alt="" coords="557,78,759,119"/>
-</map>

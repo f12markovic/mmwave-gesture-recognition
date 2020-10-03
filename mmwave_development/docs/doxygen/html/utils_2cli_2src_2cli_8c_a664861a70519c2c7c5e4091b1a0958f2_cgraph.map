@@ -1,8 +1,0 @@
-<map id="CLI_open" name="CLI_open">
-<area shape="rect" id="node2" href="$utils_2cli_2src_2cli_8c.html#ae92812e5620dd984a3ff0a02bcf2969e" title="CLI_help" alt="" coords="186,31,261,57"/>
-<area shape="rect" id="node5" href="$cli__mmwave_8c.html#ab7d2f34af7eb456da1eebe523d7e8d32" title="CLI_MMWaveExtensionInit" alt="" coords="132,81,315,108"/>
-<area shape="rect" id="node6" href="$utils_2cli_2src_2cli_8c.html#a96a82b05d16ca58d5c4f7ade7f0df74f" title="CLI_task" alt="" coords="186,132,261,159"/>
-<area shape="rect" id="node3" href="$cli__mmwave_8c.html#afeccc3d29da2612038145bfb3da68f10" title="CLI_MMWaveExtensionHelp" alt="" coords="372,5,563,32"/>
-<area shape="rect" id="node4" href="$utils_2cli_2src_2cli_8c.html#a115d0ce3ad0a40b0d11746e38947a110" title="CLI_write" alt="" coords="620,81,699,108"/>
-<area shape="rect" id="node7" href="$cli__mmwave_8c.html#a2ec9b0beaba066deafc63850d465bd8b" title="CLI_MMWaveExtensionHandler" alt="" coords="363,157,572,184"/>
-</map>
