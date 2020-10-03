@@ -1,0 +1,37 @@
+<map id="MmwDemo_dssDataPathConfig" name="MmwDemo_dssDataPathConfig">
+<area shape="rect" id="node2" href="$dss__data__path_8c.html#a216f6d9b7c2007f66ec5c1864bebe7c5" title="MmwDemo_dataPathComputeDerived\lConfig" alt="" coords="264,42,511,83"/>
+<area shape="rect" id="node4" href="$dss__data__path_8c.html#a46add3bbd4290ec0f4d11b5748dc756a" title="MmwDemo_dataPathConfigBuffers" alt="" coords="273,309,501,336"/>
+<area shape="rect" id="node6" href="$dss__main_8c.html#a798f119743a941ff51b401ad5aa6305f" title="MmwDemo_dssDataPathConfigCQ" alt="" coords="272,360,503,387"/>
+<area shape="rect" id="node7" href="$dss__main_8c.html#ae8c127a8188f913553e5cfa1f95e3701" title="MmwDemo_dssDataPathReconfig" alt="" coords="275,427,499,453"/>
+<area shape="rect" id="node30" href="$dss__main_8c.html#af0ee6317190374c37ccdc50374434d80" title="MmwDemo_parseAdcBufCfg" alt="" coords="291,477,483,504"/>
+<area shape="rect" id="node31" href="$dss__main_8c.html#a8e506995bf1fe1ae3d4141cb802bab81" title="MmwDemo_parseProfileAndChirp\lConfig" alt="" coords="278,150,497,191"/>
+<area shape="rect" id="node3" href="$dss__mmw_8h.html#a05d009ab0b8f1b02be86fa3717e1775d" title="MmwDemo_floorLog2" alt="" coords="599,5,749,32"/>
+<area shape="rect" id="node5" href="$dss__data__path_8c.html#accf7fd360051a6ae579c91bf00207a27" title="MmwDemo_printHeapStats" alt="" coords="583,309,765,336"/>
+<area shape="rect" id="node8" href="$dss__main_8c.html#a8b784104387aac58b145165bf148f2fd" title="MmwDemo_dssDataPathConfig\lAdcBuf" alt="" coords="569,361,779,402"/>
+<area shape="rect" id="node9" href="$dss__data__path_8c.html#ab97f791dded56503d235a5deaf235dc2" title="MmwDemo_dataPathConfigFFTs" alt="" coords="565,427,783,453"/>
+<area shape="rect" id="node14" href="$dss__data__path_8c.html#a97d08177b0b88ed1d5affbe67edd3734" title="MmwDemo_dataPathConfigEdma" alt="" coords="564,503,784,529"/>
+<area shape="rect" id="node21" href="$group___d_s_s___l_v_d_s___s_t_r_e_a_m.html#ga5cbbae1232a6b5183f9895ef67d731c6" title="MmwDemo_LVDSStreamDelete\lHwSession" alt="" coords="569,554,779,595"/>
+<area shape="rect" id="node22" href="$group___d_s_s___l_v_d_s___s_t_r_e_a_m.html#ga4cef31340e3e09a97a762dab14ce219b" title="MmwDemo_LVDSStreamHwConfig" alt="" coords="559,797,789,824"/>
+<area shape="rect" id="node10" href="$dss__data__path_8c.html#ac107aaed9f18aa34d7f40f690e5f9351" title="MmwDemo_gen_twiddle\l_fft16x16_fast" alt="" coords="875,245,1040,286"/>
+<area shape="rect" id="node11" href="$dss__data__path_8c.html#a5772eb20b0493c7c17feb296e443d073" title="MmwDemo_gen_twiddle\l_fft32x32_fast" alt="" coords="875,310,1040,351"/>
+<area shape="rect" id="node12" href="$dss__data__path_8c.html#a505fface56451b70266ba5f14a51a83d" title="MmwDemo_genDftSinCosTable" alt="" coords="852,376,1063,403"/>
+<area shape="rect" id="node13" href="$dss__data__path_8c.html#a402f36a6f3fafad82d47d00be62057dd" title="MmwDemo_genWindow" alt="" coords="875,427,1039,453"/>
+<area shape="rect" id="node15" href="$dss__config__edma__util_8c.html#a150f2630da81f8aff78617b093f71a91" title="EDMAutil_configType1" alt="" coords="1185,468,1341,495"/>
+<area shape="rect" id="node17" href="$dss__config__edma__util_8c.html#a78e519796d3ee3f89db452c3f22ee6e6" title="EDMAutil_configType2b" alt="" coords="1182,585,1345,612"/>
+<area shape="rect" id="node18" href="$dss__config__edma__util_8c.html#a64366456ee6eb7aa4cd11cb71ace36c5" title="EDMAutil_configType3" alt="" coords="1185,636,1341,663"/>
+<area shape="rect" id="node19" href="$dss__data__path_8c.html#a9cd469e54ecf9a39f133b0828b75f59d" title="MmwDemo_dataPathConfigCQEdma" alt="" coords="837,528,1077,555"/>
+<area shape="rect" id="node16" href="$dss__config__edma__util_8c.html#a53794c0681c33b0edc0048f899640661" title="EDMA_setup_shadow_link" alt="" coords="1464,585,1643,612"/>
+<area shape="rect" id="node20" href="$dss__data__path_8c.html#ac0d11fffca101a708de3c6f3bea1de9b" title="MmwDemo_EDMA_CQTransferCompletion\lCallbackFxn" alt="" coords="1125,519,1401,561"/>
+<area shape="rect" id="node23" href="$dss__lvds__stream_8c.html#ae04e238930a80fd34b41c2a4035f3ae8" title="MmwDemo_LVDSStream\l_EDMAAllocateCBUFFHwChannel" alt="" coords="843,691,1071,733"/>
+<area shape="rect" id="node26" href="$dss__lvds__stream_8c.html#a6e97a56f3409a72f475031ba1c881721" title="MmwDemo_LVDSStream\l_EDMAFreeCBUFFHwChannel" alt="" coords="854,757,1061,798"/>
+<area shape="rect" id="node27" href="$dss__lvds__stream_8c.html#a1bead02386ca4288241e87805da89983" title="MmwDemo_LVDSStream\l_HwTriggerFrameDone" alt="" coords="871,822,1044,863"/>
+<area shape="rect" id="node28" href="$group___h_s_i___h_e_a_d_e_r___p_r_o_t_o_c_o_l.html#ga344e6273bfd0ef37f55ea3393382aa62" title="HSIHeader_toCBUFFUnits" alt="" coords="867,888,1048,915"/>
+<area shape="rect" id="node29" href="$group___h_s_i___h_e_a_d_e_r___p_r_o_t_o_c_o_l.html#ga10f96f3bbfd33cebc75d7690947a60ca" title="HSIHeader_getHeaderSize" alt="" coords="867,939,1047,965"/>
+<area shape="rect" id="node24" href="$dss__lvds__stream_8c.html#ae78c410ab1eda94e028f7fcb2eaa436e" title="MmwDemo_LVDSStream\l_EDMAAllocateCBUFFChannel" alt="" coords="1449,691,1657,733"/>
+<area shape="rect" id="node25" href="$dss__lvds__stream_8c.html#aefc0fc1c3a35a894d10306a450bcc351" title="MmwDemo_LVDSStream\l_EDMAAllocateCBUFFSwChannel" alt="" coords="1150,762,1377,803"/>
+<area shape="rect" id="node32" href="$dss__main_8c.html#a3b0da652e12d5ef88702618cceca0649" title="MmwDemo_getChirpStartIdx" alt="" coords="579,56,769,83"/>
+<area shape="rect" id="node33" href="$dss__main_8c.html#ac0fdd34a395cfa537cc16f6a6b4e4292" title="MmwDemo_getChirpEndIdx" alt="" coords="581,107,767,133"/>
+<area shape="rect" id="node34" href="$dss__main_8c.html#a3293b70b3555cdcdcb003421988602c6" title="MmwDemo_getNumLoops" alt="" coords="585,157,763,184"/>
+<area shape="rect" id="node35" href="$dss__main_8c.html#a540be2bf1f5369a458d992fd802bdaf4" title="MmwDemo_getProfileHandle" alt="" coords="578,208,770,235"/>
+<area shape="rect" id="node36" href="$dss__data__path_8c.html#a2d544fba2a4525a7bca8d3ed5edb17a3" title="MmwDemo_pow2roundup" alt="" coords="587,259,761,285"/>
+</map>
