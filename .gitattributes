@@ -1,0 +1,16 @@
+*.map linguist-detectable=false
+*.xs linguist-detectable=false
+*.xe674 linguist-detectable=false
+*.xer4f linguist-detectable=false
+*.bin linguist-detectable=false
+*.c linguist-detectable=false
+*.h linguist-detectable=false
+*.mak linguist-detectable=false
+*.cfg linguist-detectable=false
+*.cmd linguist-detectable=false
+*.html linguist-detectable=false
+*.png linguist-detectable=false
+*.gif linguist-detectable=false
+*.md5 linguist-detectable=false
+*.repository linguist-detectable=false
+*.txt linguist-detectable=false
