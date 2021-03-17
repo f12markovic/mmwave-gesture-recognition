@@ -33,7 +33,7 @@ from colorama import Fore
 colorama.init(autoreset=True)
 
 
-class NN():
+class NN:
     def __init__(self):
         self.collecting = False
         self.sequence = []
