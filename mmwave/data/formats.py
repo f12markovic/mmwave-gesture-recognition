@@ -266,7 +266,7 @@ class Formats:
         return format
 
 
-class GESTURE():
+class GESTURE:
     SWIPE_UP = 0
     SWIPE_DOWN = 1
     SWIPE_LEFT = 2

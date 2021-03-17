@@ -14,7 +14,7 @@ from colorama import Fore
 colorama.init(autoreset=True)
 
 
-class Parser():
+class Parser:
     def __init__(self, formats):
         self.sync = False
         self.sync_time = 0

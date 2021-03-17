@@ -11,8 +11,7 @@ from colorama import Fore
 colorama.init(autoreset=True)
 
 
-class Connection():
-
+class Connection:
     TIMEOUT = 1
     BAUDRATES = [
         9600,

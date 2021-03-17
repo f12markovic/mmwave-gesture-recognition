@@ -15,7 +15,7 @@ from colorama import Fore
 colorama.init(autoreset=True)
 
 
-class Logger():
+class Logger:
     def __init__(self, GESTURE_TAG):
         self.logging = False
         self.gesture = GESTURE_TAG

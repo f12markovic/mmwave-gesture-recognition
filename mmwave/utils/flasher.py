@@ -53,7 +53,7 @@ class CMD:
             self.timeout = 60
 
 
-class Flasher():
+class Flasher:
     BLOCK_SIZE = 0xF0
     MAX_FILE_SIZE = 1024**2
 
